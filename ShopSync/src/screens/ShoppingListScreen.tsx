@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 import { useNavigation } from '@react-navigation/native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import { supabase } from '../utils/supabase';
 import { TextComponent } from '../components/Shared/Text';
@@ -17,6 +18,7 @@ import CustomButton from '../components/Shared/Button';
 import { ViewComponent } from '../components/Shared/View';
 import LoadingIndicator from '../components/Shared/LoadingIndicator';
 import { queryClient } from '../../queryClient';
+import { colours } from '../constants';
 
 const fetchSingleShoppingList = async (id: number) => {
   const { data: shopping_list, error } = await supabase
@@ -123,10 +125,10 @@ export const ShoppingListScreen = ({ route }) => {
                   <TextComponent text={item.name} />
                   <View style={styles.itemOptions}>
                     <Pressable onPress={() => itemChecked(item)}>
-                      <TextComponent text={item.checked ? '✅' : '❌'} />
+                      <MaterialIcons name="check-circle" size={24} color={colours.green} opacity={item?.checked ? 1 : 0.4} />
                     </Pressable>
                     <Pressable onPress={() => deleteItem(item.id)}>
-                      <TextComponent text="Delete" />
+                      <MaterialIcons name="delete-forever" size={24} color={colours.secondary} />
                     </Pressable>
                   </View>
                 </View>

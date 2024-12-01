@@ -3,6 +3,7 @@ export const colours = {
   secondary: '#bb4430',
   tertiary: '#7ebdc2',
   white: '#fff',
+  green: '#008000'
 };
 
 export const font_sizes = {
