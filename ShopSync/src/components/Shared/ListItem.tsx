@@ -80,7 +80,9 @@ export const ListItem = ({ id, title }: ListItemProps) => {
         <Pressable onPress={() => deleteAlert(id)}>
           <TextComponent text="Delete" />
         </Pressable>
-        <TextComponent text="Share" />
+        <Pressable onPress={() => navigation.navigate('InviteScreen', { id })}>
+          <TextComponent text="Invite" />
+        </Pressable>
       </View>
     </View>
   );

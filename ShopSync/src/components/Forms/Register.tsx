@@ -72,6 +72,7 @@ const RegisterForm = ({submit, loading}: Props) => {
             onChangeText={value => onChange(value)}
             value={value}
             width="80%"
+            autoCapitalize='none'
           />
         )}
       />
