@@ -14,14 +14,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.trevor1878.ShopSync"
+      "bundleIdentifier": "com.shopsyncapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.trevor1878.ShopSync"
+      "package": "com.shopsyncapp"
     },
     "plugins": [
       "expo-font",

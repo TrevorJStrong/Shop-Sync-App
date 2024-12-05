@@ -109,9 +109,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.trevor1878.ShopSync'
+    namespace 'com.shopsyncapp'
     defaultConfig {
-        applicationId 'com.trevor1878.ShopSync'
+        applicationId 'com.shopsyncapp'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

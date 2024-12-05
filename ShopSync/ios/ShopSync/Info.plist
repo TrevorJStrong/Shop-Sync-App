@@ -28,7 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>myapp</string>
-          <string>com.trevor1878.ShopSync</string>
+          <string>com.shopsyncapp</string>
         </array>
       </dict>
       <dict>

@@ -1,4 +1,4 @@
-package com.trevor1878.ShopSync
+package com.shopsyncapp
 
 import android.app.Application
 import android.content.res.Configuration
