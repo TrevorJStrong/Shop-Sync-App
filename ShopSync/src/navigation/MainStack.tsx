@@ -50,7 +50,7 @@ const MainStack = () => {
                 name="SingleList"
                 component={ShoppingListScreen}
                 options={({ route, navigation }) => ({
-                    headerTitle: route.params.title,
+                    headerTitle: route.params.title ?? 'Shopping List',
                     headerRight: () => (
                         <Pressable
                             onPress={() => {

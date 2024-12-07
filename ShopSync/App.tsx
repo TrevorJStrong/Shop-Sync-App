@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {QueryClientProvider} from '@tanstack/react-query';
 import {LogLevel, OneSignal} from 'react-native-onesignal';
 import Constants from 'expo-constants';
+import { Text } from 'react-native';
 
 import {queryClient} from './queryClient';
 import RootStack from './src/navigation';
@@ -32,9 +33,29 @@ const App = () => {
     console.log('OneSignal: notification clicked:', event);
   });
 
+  const linking = {
+    // enabled: 'auto',
+    prefixes: [
+      /* your linking prefixes */
+      /* 'https://shopsync.com' */
+      'myapp://'
+    ],
+    config: {
+      /* configuration for matching screens with paths */
+      initialRouteName: "ShoppingLists" as const,
+      screens: {
+        Main: {
+          screens: {
+            SingleList: 'single-list/:id',
+          }
+        }
+      }
+    },
+  };
+
   return (
     <QueryClientProvider client={queryClient}>
-      <NavigationContainer>
+      <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
         <RootStack />
       </NavigationContainer>
     </QueryClientProvider>

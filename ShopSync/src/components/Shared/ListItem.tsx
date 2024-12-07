@@ -9,6 +9,7 @@ import {
 import { TextComponent } from './Text';
 import { supabase } from '../../utils/supabase';
 import { useMutation } from '@tanstack/react-query';
+import { shareList } from '@/src/services/shareList';
 import { queryClient } from '../../../queryClient';
 
 type ListItemProps = {
@@ -80,7 +81,7 @@ export const ListItem = ({ id, title }: ListItemProps) => {
         <Pressable onPress={() => deleteAlert(id)}>
           <TextComponent text="Delete" />
         </Pressable>
-        <Pressable onPress={() => navigation.navigate('InviteScreen', { id })}>
+        <Pressable onPress={() => sharroute.params.titleeList(id)}>
           <TextComponent text="Invite" />
         </Pressable>
       </View>

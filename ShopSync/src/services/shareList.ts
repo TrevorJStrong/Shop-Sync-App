@@ -1,40 +1,24 @@
 // share list via sms service
 import { Share } from 'react-native';
-import { supabase } from '../utils/supabase';
 
-export const shareList = async (listId: number) => {
-  const { data, error } = await supabase
-    .from('shopping_lists')
-    .select('name')
-    .eq('id', listId)
-    .single();
-  if (error) {
-    throw new Error(error.message);
-  }
-  const { data: user } = await supabase.auth.getUser();
-  const { data: list } = await supabase
-    .from('shopping_lists')
-    .select('list')
-    .eq('id', listId)
-    .single();
-  if (error) {
-    throw new Error(error.message);
-  }
-  const listString = list.list
-    .map(item => item.name)
-    .join('\n')
-    .toString();
-  console.log('listString', listString);
-  const result = await Share.share({
-    message: `Hey! I found this list on ShopSync. Here's the title: ${data.name}\n${listString}`,
-  });
-  if (result.action === Share.sharedAction) {
-    if (result.activityType) {
-      console.log('activityType', result.activityType);
-    } else {
-      console.log('shared');
+export const shareList = async (listId: number) => {  
+  const message = `Check out this shopping list: myapp://single-list/${listId}`;
+
+  try {
+    const result = await Share.share({
+      message, // Message containing your custom URI scheme
+    });
+
+    if (result.action === Share.sharedAction) {
+      if (result.activityType) {
+        console.log('Shared with activity type: ', result.activityType);
+      } else {
+        console.log('Shared successfully!');
+      }
+    } else if (result.action === Share.dismissedAction) {
+      console.log('Share dismissed');
     }
-  } else if (result.action === Share.dismissedAction) {
-    console.log('dismissed');
+  } catch (error) {
+    console.error('Error sharing: ', error.message);
   }
 };

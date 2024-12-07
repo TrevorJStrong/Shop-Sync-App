@@ -11,7 +11,7 @@ const Logo = () => {
         // style={{height: 200, width: 200}}
       /> */}
       <TextComponent size="4xl" align="center" text="SHOPSYNC" />
-      <TextComponent align="center" text="Share, Sync, Shop" />
+      <TextComponent align="center" text="Share, Shop, Sync" />
     </View>
   );
 };
