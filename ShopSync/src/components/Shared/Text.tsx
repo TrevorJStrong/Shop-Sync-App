@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
-import { colours, font_sizes } from '../../constants';
+import { colours, font_sizes, fonts } from '../../constants';
 import { TextProps } from '../types';
-import { fontWeights } from '../../constants';
 
 export const TextComponent = ({
   text,
@@ -31,9 +30,9 @@ export const TextComponent = ({
 
 const styles = StyleSheet.create({
   regular: {
-    fontFamily: fontWeights.regular,
+    fontFamily: fonts.regular,
   },
   bold: {
-    fontFamily: fontWeights.semiBold,
+    // fontFamily: fonts.semiBold,
   },
 });

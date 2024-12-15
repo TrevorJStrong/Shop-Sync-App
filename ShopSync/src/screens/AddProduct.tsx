@@ -101,7 +101,7 @@ const AddProduct = ({ navigation, route }) => {
                             placeholder={'Select a category'}
                             containerStyle={[styles.dropDown, { marginBottom: open ? 200 : 0 }]}
                             textStyle={{
-                                fontFamily: 'Montserrat-Regular',
+                                fontFamily: 'Space-Mono-Regular',
                             }}
                             placeholderStyle={{
                                 color: '#BDBDBD',

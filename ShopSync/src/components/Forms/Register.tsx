@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {SafeAreaView} from 'react-native';
+import {View} from 'react-native';
 import {Controller, useForm} from 'react-hook-form';
 
 import CustomInput from '../Shared/Input';
@@ -34,7 +34,7 @@ const RegisterForm = ({submit, loading}: Props) => {
   };
 
   return (
-    <SafeAreaView style={flex_center}>
+    <View style={flex_center}>
       <ViewComponent mb={30}>
         <TextComponent size="3xl" align="center" text="Register" />
       </ViewComponent>

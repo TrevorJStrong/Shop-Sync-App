@@ -65,7 +65,6 @@ export const align_middle = {
   width: '90%',
 };
 
-export const fontWeights = {
-  regular: 'Montserrat-Regular',
-  semiBold: 'Montserrat-Medium',
+export const fonts = {
+  regular: 'Space-Mono-Regular',
 };

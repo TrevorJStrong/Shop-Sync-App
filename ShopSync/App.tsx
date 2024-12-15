@@ -8,6 +8,7 @@ import { Text } from 'react-native';
 import {queryClient} from './queryClient';
 import RootStack from './src/navigation';
 import {useAuthStore} from './src/hooks/useStore';
+import useCachedResources from './src/hooks/useCachedResources';
 // import * as Sentry from '@sentry/react-native';
 
 // Sentry.init({

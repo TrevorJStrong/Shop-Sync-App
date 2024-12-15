@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TextInput, TextInputProps } from 'react-native';
 
-import { colours } from '../../constants';
+import { colours, fonts } from '../../constants';
 
 type InputProps = TextInputProps & {
   width?: string;
@@ -27,5 +27,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     marginVertical: 10,
     paddingHorizontal: 5,
+    fontFamily: fonts.regular
   },
 });

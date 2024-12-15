@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Pressable, SafeAreaView, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 
 import CustomInput from '../Shared/Input';
@@ -36,7 +36,7 @@ const LoginForm = ({ submit, loading }: Props) => {
   };
 
   return (
-    <SafeAreaView style={flex_center}>
+    <View style={flex_center}>
       <View style={{ marginBottom: margin.large }}>
         <Logo />
       </View>
