@@ -83,7 +83,7 @@ const LoginForm = ({ submit, loading }: Props) => {
           />
         </Pressable>
       </ViewComponent>
-    </SafeAreaView>
+    </View>
   );
 };
 

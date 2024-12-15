@@ -96,7 +96,7 @@ const RegisterForm = ({submit, loading}: Props) => {
         loading={loading}
         mt={50}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
