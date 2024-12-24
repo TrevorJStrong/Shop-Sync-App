@@ -6,6 +6,7 @@ import { useAuthStore } from '../../hooks/useStore';
 import { supabase } from '../../utils/supabase';
 import { flex_center } from '../../constants';
 import LoginForm from '../../components/Forms/Login';
+import { showToast } from '@/src/utils/showToast';
 
 type formData = {
   email: string;
@@ -26,9 +27,17 @@ export const LoginScreen = () => {
       password: data.password,
     });
 
-    if (error) Alert.alert(error.message);
+    if (error) {
+      showToast({
+        message: error.message,
+        type: 'error',
+      });
+    }
     if (session) {
-      console.log(session, 'logged in');
+      showToast({
+        message: 'Logged In',
+        type: 'success',
+      });
       login(session.access_token);
     }
     setLoading(false);

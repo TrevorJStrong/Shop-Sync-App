@@ -3,7 +3,6 @@ import { Pressable } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { HomeScreen } from '../screens/HomeScreen';
-import { HomeStackParamList } from './types';
 import { TextComponent } from '../components/Shared/Text';
 import { useNavigation } from '@react-navigation/native';
 import { colours } from '../constants';
@@ -11,6 +10,8 @@ import { ShoppingListScreen } from '../screens/ShoppingListScreen';
 import AddNewListScreen from '../screens/AddNewListScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import AddProduct from '../screens/AddProduct';
+
+import type { HomeStackParamList } from './types';
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
 

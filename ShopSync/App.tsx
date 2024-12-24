@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {QueryClientProvider} from '@tanstack/react-query';
 import {LogLevel, OneSignal} from 'react-native-onesignal';
 import Constants from 'expo-constants';
-import { Text } from 'react-native';
+import Toast from 'react-native-toast-message';
 
 import {queryClient} from './queryClient';
 import RootStack from './src/navigation';
@@ -55,11 +55,14 @@ const App = () => {
   };
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
-        <RootStack />
-      </NavigationContainer>
-    </QueryClientProvider>
+    <>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer linking={linking}>
+          <RootStack />
+        </NavigationContainer>
+      </QueryClientProvider>
+      <Toast />
+    </>
   );
 };
 
