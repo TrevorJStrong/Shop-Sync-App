@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Alert, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
 import { useAuthStore } from '../../hooks/useStore';
 import { supabase } from '../../utils/supabase';

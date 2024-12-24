@@ -4,19 +4,17 @@ import {QueryClientProvider} from '@tanstack/react-query';
 import {LogLevel, OneSignal} from 'react-native-onesignal';
 import Constants from 'expo-constants';
 import Toast from 'react-native-toast-message';
+import * as Sentry from '@sentry/react-native';
 
 import {queryClient} from './queryClient';
 import RootStack from './src/navigation';
-import {useAuthStore} from './src/hooks/useStore';
-import useCachedResources from './src/hooks/useCachedResources';
-// import * as Sentry from '@sentry/react-native';
 
-// Sentry.init({
-//   dsn: 'https://341d984e61970f676286b7dea87de567@o4508154603700224.ingest.de.sentry.io/4508154610188368',
+Sentry.init({
+  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN_KEY
 
-//   // uncomment the line below to enable Spotlight (https://spotlightjs.com)
-//   // enableSpotlight: __DEV__,
-// });
+  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+  // enableSpotlight: __DEV__,
+});
 
 const App = () => {
   // Remove this method to stop OneSignal Debugging
