@@ -8,10 +8,10 @@ import { supabase } from '../utils/supabase';
 import { TextComponent } from '../components/Shared/Text';
 import { AddNewListBtn } from '../components/AddNewListBtn';
 import { DataItem } from '../types';
-import { ListItem } from '../components/Shared/ListItem';
 import { HomeStackParamList } from '../navigation/types';
 import LoadingIndicator from '../components/Shared/LoadingIndicator';
 import { ViewComponent } from '../components/Shared/View';
+import ShoppingListContainer from '../components/ShoppingListContainer';
 
 type ScreenProps = NativeStackScreenProps<HomeStackParamList, 'ShoppingLists'>;
 
@@ -63,7 +63,11 @@ export const HomeScreen = ({ navigation }: ScreenProps) => {
   function renderList({ item }: { item: DataItem }) {
     return (
       <View>
-        <ListItem id={item.id} title={item.title} />
+        <ShoppingListContainer
+          id={item.id} 
+          title={item.title}
+          list={item.items}
+        />
       </View>
     );
   }
