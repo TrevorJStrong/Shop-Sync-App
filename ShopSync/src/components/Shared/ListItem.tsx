@@ -81,7 +81,7 @@ export const ListItem = ({ id, title }: ListItemProps) => {
         <Pressable onPress={() => deleteAlert(id)}>
           <TextComponent text="Delete" />
         </Pressable>
-        <Pressable onPress={() => sharroute.params.titleeList(id)}>
+        <Pressable onPress={() => shareList(id)}>
           <TextComponent text="Invite" />
         </Pressable>
       </View>
