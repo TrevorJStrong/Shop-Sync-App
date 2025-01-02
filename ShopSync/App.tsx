@@ -10,8 +10,14 @@ import {queryClient} from './queryClient';
 import RootStack from './src/navigation';
 
 Sentry.init({
-  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN_KEY
-
+  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN_KEY,
+  _experiments: {
+    replaysSessionSampleRate: 1.0,
+    replaysOnErrorSampleRate: 1.0,
+  },
+  integrations: [
+    Sentry.mobileReplayIntegration(),
+  ],
   // uncomment the line below to enable Spotlight (https://spotlightjs.com)
   // enableSpotlight: __DEV__,
 });
