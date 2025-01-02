@@ -35,8 +35,9 @@ export const LoginScreen = () => {
     }
     if (session) {
       showToast({
-        message: 'Logged In',
+        message: `Welcome ${session.user.user_metadata.first_name}`,
         type: 'success',
+        position: 'bottom',
       });
       login(session.access_token);
     }
