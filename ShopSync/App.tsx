@@ -5,6 +5,8 @@ import {LogLevel, OneSignal} from 'react-native-onesignal';
 import Constants from 'expo-constants';
 import Toast from 'react-native-toast-message';
 import * as Sentry from '@sentry/react-native';
+import {SheetProvider} from 'react-native-actions-sheet';
+import './src/components/OptionsBottomSheet/sheets';
 
 import {queryClient} from './queryClient';
 import RootStack from './src/navigation';
@@ -62,7 +64,9 @@ const App = () => {
     <>
       <QueryClientProvider client={queryClient}>
         <NavigationContainer linking={linking}>
-          <RootStack />
+          <SheetProvider>
+            <RootStack />
+          </SheetProvider>
         </NavigationContainer>
       </QueryClientProvider>
       <Toast />

@@ -6,11 +6,17 @@ import { TextComponent } from "./Shared/Text";
 import { SubItem } from "../types";
 import { colours } from "../constants";
 import { supabase } from "../utils/supabase";
+import { SheetManager } from "react-native-actions-sheet";
 
 interface ShoppingListContainerProps {
   id: number;
   title: string;
   list: SubItem[];
+};
+
+interface BottomSheetPayload {
+  id: number;
+  shoppingListId: number;
 };
 
 const ShoppingListContainer = ({ id, title, list }: ShoppingListContainerProps) => {
@@ -27,12 +33,20 @@ const ShoppingListContainer = ({ id, title, list }: ShoppingListContainerProps) 
   //   return data;
   // };
 
+  const showOptionsBottomSheet = () => {
+    SheetManager.show("options-sheet", {
+      payload: { 
+        shoppingListId: id 
+      } as BottomSheetPayload,
+    });
+  };
+
   const listLength = list?.length > 0 ? `${list.length} items` : 'No items';
   return (
     <View style={styles.container}>
       <View style={styles.flexRow}>
         <TextComponent text={title} />
-        <Pressable onPress={() => console.log('Options')}>
+        <Pressable onPress={() => showOptionsBottomSheet()}>
           <SimpleLineIcons name="options-vertical" size={24} color={colours.primary} />
         </Pressable>
       </View>
@@ -73,4 +87,4 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 10
   },
-})
+});
