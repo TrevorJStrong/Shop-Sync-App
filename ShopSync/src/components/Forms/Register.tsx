@@ -34,7 +34,7 @@ const RegisterForm = ({submit, loading}: Props) => {
   };
 
   return (
-    <>
+    <View style={flex_center}>
       <ViewComponent mb={30}>
         <TextComponent size="3xl" align="center" text="Register" />
       </ViewComponent>
@@ -96,7 +96,7 @@ const RegisterForm = ({submit, loading}: Props) => {
         loading={loading}
         mt={50}
       />
-    </>
+    </View>
   );
 };
 

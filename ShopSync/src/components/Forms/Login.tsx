@@ -5,7 +5,7 @@ import { Controller, useForm } from 'react-hook-form';
 
 import CustomInput from '../Shared/Input';
 import CustomButton from '../Shared/Button';
-import { flex_center, margin } from '../../constants';
+import { margin } from '../../constants';
 import Logo from '../Logo';
 import { ViewComponent } from '../Shared/View';
 import { TextComponent } from '../Shared/Text';
