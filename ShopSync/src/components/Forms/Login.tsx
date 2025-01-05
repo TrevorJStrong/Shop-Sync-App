@@ -36,7 +36,7 @@ const LoginForm = ({ submit, loading }: Props) => {
   };
 
   return (
-    <View style={flex_center}>
+    <>
       <View style={{ marginBottom: margin.large }}>
         <Logo />
       </View>
@@ -83,7 +83,7 @@ const LoginForm = ({ submit, loading }: Props) => {
           />
         </Pressable>
       </ViewComponent>
-    </View>
+    </>
   );
 };
 
